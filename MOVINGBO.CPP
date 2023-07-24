@@ -1,29 +1,45 @@
-#include<stdio.h>
-#include<conio.h>
-#include<graphics.h>
-#include <dos.h>
-void main()
-{
-int gdriver=DETECT,gmode;
-initgraph(&gdriver,&gmode,"c:\\tc\\bgi");
-int i;
-for (i=0;i<550;i++)
-{
-cleardevice();
-setfillstyle(1,4);
-rectangle(50+i,140,100+i,200);
-floodfill(51+i,141,15);
-delay(20);
-}
+#include <graphics.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <conio.h>
+#include<dos.h>
 
-for (i=550;i>0;i--)
-{
-cleardevice();
-setfillstyle(1,4);
-rectangle(50+i,140,100+i,200);
-floodfill(51+i,141,15);
-delay(20);
-}
-getch();
-closegraph();
-}
+int main(void)
+{  int i;
+   int gdriver = DETECT, gmode;
+   initgraph(&gdriver, &gmode, "c:/tc/bgi");
+   for (i=0;i<=500;i++)
+   {
+   cleardevice();
+   setfillstyle(SOLID_FILL,RED);
+   rectangle(0+i,100,50+i,150);
+   floodfill(1+i,101,15);
+   delay(10);
+   }
+   for (i=0;i<250;i++)
+   {
+   cleardevice();
+   setfillstyle(SOLID_FILL,RED);
+   rectangle(580,100+i,630,150+i);
+   floodfill(581,102+i,15);
+   delay(10);
+   }
+   for(i=0;i<=250;i++)
+   {
+    cleardevice();
+   setfillstyle(SOLID_FILL,RED);
+   rectangle(580-i,350,630-i,400);
+   floodfill(581-i,352,15);
+   delay(10);
+   }
+   for(i=0;i<=250,i++)
+   {
+    cleardevice();
+   setfillstyle(SOLID_FILL,RED);
+   rectangle(0,350-i,50,400-i);
+   floodfill(1,352-i,15);
+   delay(10);
+   }
+   getch();
+   return 0;
+   }
